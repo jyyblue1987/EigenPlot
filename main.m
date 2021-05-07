@@ -5,7 +5,7 @@ clear all
 % define paramters
 N = 60;
 
-lambda = 0;
+lambda = 1;
 
 t = 0.5;
 E0 = 2;
@@ -13,13 +13,14 @@ f = 1/3
 a = 10;
 n = 1:N;
 
-x = [-pi:0.01:pi];
+scale = 1
+x = [-pi/scale:0.01:pi/scale];
 step = length(x);
 res=zeros(N,step);
 c = 1;
 
-for k = -pi:0.01:pi
-    r = E0 - 2*t*cos(2*pi*f*n + k*a);
+for k = -pi/scale:0.01:pi/scale
+    r = E0 - 2*t*cos(2*pi*f*n + k*a*scale);
     M = diag(r);
     for i = 2:N
         M(i, i - 1) = 1;
@@ -35,13 +36,12 @@ for k = -pi:0.01:pi
     c = c + 1;
 end
 
-disp('end of calculating eigenvalue data') 
-
 figure 
 for i =1:N
     hold on;
     plot(x, res(i,:))
 end
+
 
 
 
