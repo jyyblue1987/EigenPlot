@@ -5,12 +5,12 @@ clear all
 % define paramters
 N = 60;
 
-lambda = 1;
+lambda = 0;
 
-t = 0.5;
-E0 = 2;
-f = 1/3
-a = 10;
+t = 2;
+E0 = 0;
+f = 1/3;
+a = 1;
 n = 1:N;
 
 scale = 1
