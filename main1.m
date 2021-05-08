@@ -31,9 +31,10 @@ d = [19 20 21 22]
 
 figure 
 
+colors = ['r', 'y', 'b', 'g']
 for i =1:length(d)
     hold on;
-    plot(V(:,d(i)));
+    plot(V(:,d(i)), colors(i));
 end
 
 
